@@ -1,9 +1,12 @@
 package com.example.amaury.frameanimation;
 
 import android.app.Activity;
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
 
 
 public class MainActivity extends Activity {
@@ -34,5 +37,22 @@ public class MainActivity extends Activity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void startFrameAnimation(View view){
+        ImageView imageFrame = (ImageView) findViewById(R.id.imageFrame);
+        imageFrame.setBackgroundResource(R.drawable.frame);
+
+        AnimationDrawable frameAnimation = (AnimationDrawable) imageFrame.getBackground();
+
+        if(frameAnimation.isRunning()){
+            frameAnimation.stop();
+        }else{
+            frameAnimation.stop();
+            frameAnimation.start();
+
+        }
+
+
     }
 }
